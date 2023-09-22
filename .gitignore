@@ -17,6 +17,7 @@ Release/
 bin/
 Makefile
 build/
+SFML/
 
 # Manually Added
 CMakeFiles/
