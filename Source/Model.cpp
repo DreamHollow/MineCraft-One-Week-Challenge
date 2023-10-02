@@ -62,6 +62,9 @@ void Model::addData(const Mesh &mesh)
     addEBO(mesh.indices);
 }
 
+/// @brief Adds a Vertex Array Object for OpenGL.
+/// @param dimensions 
+/// @param data 
 void Model::addVBO(int dimensions, const std::vector<GLfloat> &data)
 {
     GLuint vbo;
@@ -78,6 +81,8 @@ void Model::addVBO(int dimensions, const std::vector<GLfloat> &data)
     m_buffers.push_back(vbo);
 }
 
+/// @brief Add an Element Buffer Object.
+/// @param indices 
 void Model::addEBO(const std::vector<GLuint> &indices)
 {
     m_renderInfo.indicesCount = static_cast<GLuint>(indices.size());
