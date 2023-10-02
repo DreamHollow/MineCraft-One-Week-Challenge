@@ -63,7 +63,6 @@ add_executable(mc-one-week
     Source/Input/ToggleKey.cpp
     Source/Input/Keyboard.cpp
     Source/Main.cpp
-    Source/Controller.cpp
     Source/Util/Random.cpp
     Source/Util/FPSCounter.cpp
     Source/Util/FileUtil.cpp
