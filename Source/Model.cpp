@@ -53,6 +53,8 @@ void Model::bindVAO() const
     glBindVertexArray(m_renderInfo.vao);
 }
 
+/// @brief Commits the mesh data that will actually be rendered.
+/// @param mesh 
 void Model::addData(const Mesh &mesh)
 {
     genVAO();
