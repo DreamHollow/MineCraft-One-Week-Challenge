@@ -1,6 +1,6 @@
 #ifndef FPSCOUNTER_H_INCLUDED
 #define FPSCOUNTER_H_INCLUDED 1
-
+/*
 #include <SFML/Graphics.hpp>
 
 class RenderMaster;
@@ -28,5 +28,6 @@ class FPSCounter {
 
     int m_frameCount = 0;
 };
+*/
 
 #endif // FPSCOUNTER_H_INCLUDED

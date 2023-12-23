@@ -1,3 +1,4 @@
+/*
 #include "Util/FPSCounter.h"
 
 #include "Renderer/RenderMaster.h"
@@ -44,3 +45,4 @@ void FPSCounter::draw(RenderMaster &renderer)
 {
     m_text.setString("FPS: " + std::to_string(m_fps));
 }
+*/
