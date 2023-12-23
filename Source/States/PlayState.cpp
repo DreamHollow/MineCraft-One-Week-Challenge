@@ -68,7 +68,7 @@ void StatePlay::update(float deltaTime)
     if (m_player.position.z < 0)
     { m_player.position.z = 0; };
 
-    m_fpsCounter.update();
+    //m_fpsCounter.update();
     m_player.update(deltaTime, m_world);
     m_world.update(m_pApplication->getCamera());
 }
@@ -85,8 +85,8 @@ void StatePlay::render(RenderMaster &renderer)
     }
 
     if (drawGUI) {
-        m_fpsCounter.draw(renderer);
-        m_player.draw(renderer);
+        //m_fpsCounter.draw(renderer);
+        m_player.draw(); //renderer);
     }
 
     m_world.renderWorld(renderer, m_pApplication->getCamera());

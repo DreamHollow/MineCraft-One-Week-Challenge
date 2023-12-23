@@ -28,7 +28,7 @@ class StatePlay : public StateBase {
     Player m_player;
     World m_world;
 
-    FPSCounter m_fpsCounter;
+    //FPSCounter m_fpsCounter;
 };
 
 #endif // PlayState_H_INCLUDED
