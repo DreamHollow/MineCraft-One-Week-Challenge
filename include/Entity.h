@@ -4,7 +4,8 @@
 #include "Maths/Matrix.h"
 #include "Physics/AABB.h"
 
-struct Entity {
+class Entity {
+public:
     Entity()
         : box({0.f, 0.f, 0.f})
         , position(glm::vec3(0.f))
