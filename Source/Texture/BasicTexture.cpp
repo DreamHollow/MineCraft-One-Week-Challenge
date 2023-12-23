@@ -1,4 +1,4 @@
-#include "BasicTexture.h"
+#include "Texture/BasicTexture.h"
 
 BasicTexture::BasicTexture(const std::string &file)
 {

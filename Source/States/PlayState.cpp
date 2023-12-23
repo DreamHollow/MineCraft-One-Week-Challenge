@@ -1,9 +1,9 @@
-#include "PlayState.h"
+#include "States/PlayState.h"
 
-#include "../Application.h"
-#include "../Maths/Ray.h"
-#include "../Renderer/RenderMaster.h"
-#include "../World/Event/PlayerDigEvent.h"
+#include "Application.h"
+#include "Maths/Ray.h"
+#include "Renderer/RenderMaster.h"
+#include "World/Event/PlayerDigEvent.h"
 
 #include <iostream>
 

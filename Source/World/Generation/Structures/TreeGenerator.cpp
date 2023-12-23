@@ -1,7 +1,7 @@
-#include "TreeGenerator.h"
+#include "World/Generation/Structures/TreeGenerator.h"
 
-#include "../../Chunk/Chunk.h"
-#include "StructureBuilder.h"
+#include "World/Chunk/Chunk.h"
+#include "World/Generation/Structures/StructureBuilder.h"
 
 constexpr BlockId CACTUS = BlockId::Cactus;
 

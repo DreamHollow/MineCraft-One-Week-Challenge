@@ -1,9 +1,9 @@
-#include "WaterRenderer.h"
+#include "Renderer/WaterRenderer.h"
 
-#include "../Application.h"
-#include "../Camera.h"
-#include "../World/Block/BlockDatabase.h"
-#include "../World/Chunk/ChunkMesh.h"
+#include "Application.h"
+#include "Camera.h"
+#include "World/Block/BlockDatabase.h"
+#include "World/Chunk/ChunkMesh.h"
 
 #include <iostream>
 

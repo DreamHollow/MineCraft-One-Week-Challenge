@@ -1,13 +1,13 @@
-#include "ClassicOverWorldGenerator.h"
+#include "World/Generation/Terrain/ClassicOverWorldGenerator.h"
 
 #include <functional>
 #include <iostream>
 
-#include "../../../Maths/GeneralMaths.h"
-#include "../../../Util/Random.h"
-#include "../../Chunk/Chunk.h"
+#include "Maths/GeneralMaths.h"
+#include "Util/Random.h"
+#include "World/Chunk/Chunk.h"
 
-#include "../Structures/TreeGenerator.h"
+#include "World/Generation/Structures/TreeGenerator.h"
 
 namespace {
 const int seed = RandomSingleton::get().intInRange(424, 325322);

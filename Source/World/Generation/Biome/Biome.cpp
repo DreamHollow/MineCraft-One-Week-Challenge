@@ -1,4 +1,4 @@
-#include "Biome.h"
+#include "World/Generation/Biome/Biome.h"
 
 Biome::Biome(const NoiseParameters &parameters, int treeFreq, int plantFreq,
              int seed)

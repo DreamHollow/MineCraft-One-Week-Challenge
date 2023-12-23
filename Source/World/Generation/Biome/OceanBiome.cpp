@@ -1,6 +1,6 @@
-#include "OceanBiome.h"
+#include "World/Generation/Biome/OceanBiome.h"
 
-#include "../Structures/TreeGenerator.h"
+#include "World/Generation/Structures/TreeGenerator.h"
 
 OceanBiome::OceanBiome(int seed)
     : Biome(getNoiseParameters(), 50, 100, seed)

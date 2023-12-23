@@ -1,4 +1,4 @@
-#include "CubeTexture.h"
+#include "Texture/CubeTexture.h"
 
 CubeTexture::CubeTexture(const std::array<std::string, 6> &files)
 {

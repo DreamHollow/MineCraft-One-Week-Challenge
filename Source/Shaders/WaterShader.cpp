@@ -1,4 +1,4 @@
-#include "WaterShader.h"
+#include "Shaders/WaterShader.h"
 
 WaterShader::WaterShader()
     : BasicShader("Water", "Chunk")

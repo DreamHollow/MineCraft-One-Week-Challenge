@@ -1,6 +1,6 @@
-#include "TemperateForestBiome.h"
+#include "World/Generation/Biome/TemperateForestBiome.h"
 
-#include "../Structures/TreeGenerator.h"
+#include "World/Generation/Structures/TreeGenerator.h"
 
 TemperateForestBiome::TemperateForestBiome(int seed)
     : Biome(getNoiseParameters(), 55, 75, seed)

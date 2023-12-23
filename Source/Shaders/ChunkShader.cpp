@@ -1,4 +1,4 @@
-#include "ChunkShader.h"
+#include "Shaders/ChunkShader.h"
 
 ChunkShader::ChunkShader()
     : BasicShader("Chunk", "Chunk")

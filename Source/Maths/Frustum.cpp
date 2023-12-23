@@ -1,6 +1,6 @@
-#include "Frustum.h"
+#include "Maths/Frustum.h"
 
-#include "../Physics/AABB.h"
+#include "Physics/AABB.h"
 
 enum Planes {
     Near,

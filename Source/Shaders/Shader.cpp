@@ -1,6 +1,6 @@
-#include "Shader.h"
+#include "Shaders/Shader.h"
 
-#include "ShaderLoader.h"
+#include "Shaders/ShaderLoader.h"
 
 Shader::Shader(const std::string &vertexFile, const std::string &fragmentFile)
     : m_id(loadShaders(vertexFile, fragmentFile))

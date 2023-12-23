@@ -1,4 +1,4 @@
-#include "TextureAtlas.h"
+#include "Texture/TextureAtlas.h"
 #include <array>
 
 TextureAtlas::TextureAtlas(const std::string &textureFileName)

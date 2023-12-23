@@ -1,6 +1,6 @@
-#include "ShaderLoader.h"
+#include "Shaders/ShaderLoader.h"
 
-#include "../Util/FileUtil.h"
+#include "Util/FileUtil.h"
 
 #include <glad/glad.h>
 

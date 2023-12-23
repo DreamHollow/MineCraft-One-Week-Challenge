@@ -1,9 +1,9 @@
-#include "ChunkSection.h"
+#include "World/Chunk/ChunkSection.h"
 
-#include "../Block/BlockId.h"
+#include "World/Block/BlockId.h"
 
-#include "../World.h"
-#include "ChunkMeshBuilder.h"
+#include "World/World.h"
+#include "World/Chunk/ChunkMeshBuilder.h"
 
 #include <fstream>
 #include <iostream>

@@ -1,4 +1,4 @@
-#include "SkyboxShader.h"
+#include "Shaders/SkyboxShader.h"
 
 SkyboxShader::SkyboxShader()
     : Shader("Skybox", "Skybox")

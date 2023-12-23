@@ -1,12 +1,12 @@
-#include "RenderMaster.h"
+#include "Renderer/RenderMaster.h"
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-#include "../Application.h"
-#include "../Context.h"
-#include "../World/Chunk/ChunkMesh.h"
-#include "../World/Chunk/ChunkSection.h"
+#include "Application.h"
+#include "Context.h"
+#include "World/Chunk/ChunkMesh.h"
+#include "World/Chunk/ChunkSection.h"
 
 void RenderMaster::drawChunk(const ChunkSection &chunk)
 {

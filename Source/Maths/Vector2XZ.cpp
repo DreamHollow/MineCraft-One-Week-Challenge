@@ -1,4 +1,4 @@
-#include "Vector2XZ.h"
+#include "Maths/Vector2XZ.h"
 
 bool operator==(const VectorXZ &left, const VectorXZ &right) noexcept
 {

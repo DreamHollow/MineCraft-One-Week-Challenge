@@ -1,4 +1,4 @@
-#include "Material.h"
+#include "Item/Material.h"
 
 const Material Material::NOTHING(ID::Nothing, 0, false, "None");
 const Material Material::GRASS_BLOCK(ID::Grass, 99, true, "Grass Block");

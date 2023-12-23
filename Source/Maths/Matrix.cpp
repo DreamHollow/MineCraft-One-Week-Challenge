@@ -1,9 +1,9 @@
-#include "Matrix.h"
+#include "Maths/Matrix.h"
 
-#include "../Camera.h"
-#include "../Entity.h"
+#include "Camera.h"
+#include "Entity.h"
 
-#include "../Config.h"
+#include "Config.h"
 
 glm::mat4 makeModelMatrix(const Entity &entity)
 {

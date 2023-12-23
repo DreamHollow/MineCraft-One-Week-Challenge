@@ -1,9 +1,9 @@
-#include "SuperFlatGenerator.h"
+#include "World/Generation/Terrain/SuperFlatGenerator.h"
 
 #include <iostream>
 
-#include "../../Chunk/Chunk.h"
-#include "../../WorldConstants.h"
+#include "World/Chunk/Chunk.h"
+#include "World/WorldConstants.h"
 
 void SuperFlatGenerator::generateTerrainFor(Chunk &chunk)
 {

@@ -1,6 +1,6 @@
-#include "ChunkMesh.h"
+#include "World/Chunk/ChunkMesh.h"
 
-#include "../WorldConstants.h"
+#include "World/WorldConstants.h"
 
 #include <iostream>
 

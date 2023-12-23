@@ -1,6 +1,6 @@
-#include "ChunkBlock.h"
+#include "World/Block/ChunkBlock.h"
 
-#include "BlockDatabase.h"
+#include "World/Block/BlockDatabase.h"
 
 ChunkBlock::ChunkBlock(Block_t id)
     : id(id)

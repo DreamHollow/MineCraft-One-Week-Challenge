@@ -1,6 +1,6 @@
-#include "SkyboxRenderer.h"
+#include "Renderer/SkyboxRenderer.h"
 
-#include "../Camera.h"
+#include "Camera.h"
 
 #include <iostream>
 

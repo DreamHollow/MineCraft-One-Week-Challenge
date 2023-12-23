@@ -1,4 +1,4 @@
-#include "Ray.h"
+#include "Maths/Ray.h"
 
 Ray::Ray(const glm::vec3 &position, const glm::vec3 &direction)
     : m_rayStart(position)

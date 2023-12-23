@@ -1,9 +1,9 @@
-#include "ChunkRenderer.h"
+#include "Renderer/ChunkRenderer.h"
 
-#include "../World/Block/BlockDatabase.h"
-#include "../World/Chunk/ChunkMesh.h"
+#include "World/Block/BlockDatabase.h"
+#include "World/Chunk/ChunkMesh.h"
 
-#include "../Camera.h"
+#include "Camera.h"
 
 #include <iostream>
 

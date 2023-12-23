@@ -1,4 +1,4 @@
-#include "Player.h"
+#include "Player/Player.h"
 
 #include <SFML/Graphics.hpp>
 
@@ -6,9 +6,9 @@
 #include <iostream>
 #include <sstream>
 
-#include "../Input/Keyboard.h"
-#include "../Renderer/RenderMaster.h"
-#include "../World/World.h"
+#include "Input/Keyboard.h"
+#include "Renderer/RenderMaster.h"
+#include "World/World.h"
 
 sf::Font f;
 

@@ -1,8 +1,8 @@
-#include "PlayerDigEvent.h"
+#include "World/Event/PlayerDigEvent.h"
 
-#include "../../Item/Material.h"
-#include "../../Player/Player.h"
-#include "../World.h"
+#include "Item/Material.h"
+#include "Player/Player.h"
+#include "World/World.h"
 
 PlayerDigEvent::PlayerDigEvent(sf::Mouse::Button button,
                                const glm::vec3 &location, Player &player)

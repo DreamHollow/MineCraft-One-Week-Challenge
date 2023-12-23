@@ -1,6 +1,6 @@
-#include "FPSCounter.h"
+#include "Util/FPSCounter.h"
 
-#include "../Renderer/RenderMaster.h"
+#include "Renderer/RenderMaster.h"
 
 #include <iostream>
 

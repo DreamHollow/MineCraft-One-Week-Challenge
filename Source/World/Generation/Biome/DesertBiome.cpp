@@ -1,7 +1,7 @@
-#include "DesertBiome.h"
+#include "World/Generation/Biome/DesertBiome.h"
 
-#include "../../WorldConstants.h"
-#include "../Structures/TreeGenerator.h"
+#include "World/WorldConstants.h"
+#include "World/Generation/Structures/TreeGenerator.h"
 
 DesertBiome::DesertBiome(int seed)
     : Biome(getNoiseParameters(), 1350, 500, seed)

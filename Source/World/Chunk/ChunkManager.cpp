@@ -1,9 +1,9 @@
-#include "ChunkManager.h"
+#include "World/Chunk/ChunkManager.h"
 
 #include <iostream>
 
-#include "../Generation/Terrain/ClassicOverWorldGenerator.h"
-#include "../Generation/Terrain/SuperFlatGenerator.h"
+#include "World/Generation/Terrain/ClassicOverWorldGenerator.h"
+#include "World/Generation/Terrain/SuperFlatGenerator.h"
 
 ChunkManager::ChunkManager(World &world)
     : m_world(&world)

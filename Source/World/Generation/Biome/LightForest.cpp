@@ -1,6 +1,6 @@
-#include "LightForest.h"
+#include "World/Generation/Biome/LightForest.h"
 
-#include "../Structures/TreeGenerator.h"
+#include "World/Generation/Structures/TreeGenerator.h"
 
 LightForest::LightForest(int seed)
     : Biome(getNoiseParameters(), 60, 80, seed)

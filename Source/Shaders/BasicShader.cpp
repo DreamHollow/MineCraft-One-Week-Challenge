@@ -1,4 +1,4 @@
-#include "BasicShader.h"
+#include "Shaders/BasicShader.h"
 
 /// @brief Basic Shader initializing GLSL files.
 BasicShader::BasicShader(const std::string &vertexFile,

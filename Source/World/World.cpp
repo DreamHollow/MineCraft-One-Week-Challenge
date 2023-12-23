@@ -1,14 +1,14 @@
-#include "World.h"
+#include "World/World.h"
 
 #include <future>
 #include <iostream>
 
-#include "../Camera.h"
-#include "../Input/ToggleKey.h"
-#include "../Maths/Vector2XZ.h"
-#include "../Player/Player.h"
-#include "../Renderer/RenderMaster.h"
-#include "../Util/Random.h"
+#include "Camera.h"
+#include "Input/ToggleKey.h"
+#include "Maths/Vector2XZ.h"
+#include "Player/Player.h"
+#include "Renderer/RenderMaster.h"
+#include "Util/Random.h"
 
 World::World(const Camera &camera, const Config &config, Player &player)
     : m_chunkManager(*this)

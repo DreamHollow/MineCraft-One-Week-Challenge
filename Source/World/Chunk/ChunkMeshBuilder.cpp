@@ -1,10 +1,10 @@
-#include "ChunkMeshBuilder.h"
+#include "World/Chunk/ChunkMeshBuilder.h"
 
-#include "ChunkMesh.h"
-#include "ChunkSection.h"
+#include "World/Chunk/ChunkMesh.h"
+#include "World/Chunk/ChunkSection.h"
 
-#include "../Block/BlockData.h"
-#include "../Block/BlockDatabase.h"
+#include "World/Block/BlockData.h"
+#include "World/Block/BlockDatabase.h"
 
 #include <SFML/System/Clock.hpp>
 #include <cassert>
