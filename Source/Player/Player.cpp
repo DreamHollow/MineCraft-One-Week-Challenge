@@ -130,13 +130,13 @@ void Player::update(float dt, World &world)
     }
 
     position.x += velocity.x * dt;
-    collide(world, {velocity.x, 0, 0}, dt);
+    collide(world, {velocity.x, 0, 0});//, dt);
 
     position.y += velocity.y * dt;
-    collide(world, {0, velocity.y, 0}, dt);
+    collide(world, {0, velocity.y, 0});//, dt);
 
     position.z += velocity.z * dt;
-    collide(world, {0, 0, velocity.z}, dt);
+    collide(world, {0, 0, velocity.z});//, dt);
 
     box.update(position);
     velocity.x *= 0.95f;
@@ -146,7 +146,7 @@ void Player::update(float dt, World &world)
     }
 }
 
-void Player::collide(World &world, const glm::vec3 &vel, float dt)
+void Player::collide(World &world, const glm::vec3 &vel)//, float dt)
 {
     for (int x = position.x - box.dimensions.x;
          x < position.x + box.dimensions.x; x++)
@@ -257,7 +257,7 @@ void Player::mouseInput(const sf::Window &window)
     lastMousePosition = sf::Mouse::getPosition();
 }
 
-void Player::draw(RenderMaster &master)
+void Player::draw()//RenderMaster &master)
 {
     for (unsigned i = 0; i < m_items.size(); i++) {
         sf::Text &t = m_itemText[i];

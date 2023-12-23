@@ -21,11 +21,11 @@ class Player : public Entity {
     void handleInput(const sf::Window &window, Keyboard &keyboard);
 
     void update(float dt, World &wolrd);
-    void collide(World &world, const glm::vec3 &vel, float dt);
+    void collide(World &world, const glm::vec3 &vel);//, float dt);
 
     void addItem(const Material &material);
 
-    void draw(RenderMaster &master);
+    void draw();//RenderMaster &master);
 
     ItemStack &getHeldItems();
 
