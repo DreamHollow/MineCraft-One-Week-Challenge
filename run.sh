@@ -3,12 +3,12 @@
 BUILD_DIR='build'
 BINARY='mc-one-week'
 
-if [ -d $BUILD_DIR ]
+if [ -d "$BUILD_DIR" ]
 then
-	cd $BUILD_DIR 
-	if [ -f $BINARY ]
+	cd "$BUILD_DIR" 
+	if [ -f "$BINARY" ]
 	then
-		./$BINARY
+		./"$BINARY"
 	else
 		echo "Unable to find executable."
 	fi
