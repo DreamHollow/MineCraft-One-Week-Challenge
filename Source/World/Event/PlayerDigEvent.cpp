@@ -28,10 +28,11 @@ void PlayerDigEvent::dig(World &world)
     int x = static_cast<int>(m_digSpot.x);
     int y = static_cast<int>(m_digSpot.y);
     int z = static_cast<int>(m_digSpot.z);
+
     switch (m_buttonPress) {
         case sf::Mouse::Button::Left: {
-            auto block = world.getBlock(x, y, z);
-            const auto &material = Material::toMaterial((BlockId)block.id);
+            auto block = world.getBlock(x, y, z); // Get actual block data
+            const auto &material = Material::toMaterial((BlockId)block.id); // Copy block material
             m_pPlayer->addItem(material);
             /*
                         auto r = 1;
