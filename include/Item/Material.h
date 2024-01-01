@@ -1,7 +1,7 @@
 #ifndef MATERIAL_H_INCLUDED
 #define MATERIAL_H_INCLUDED 1
 
-#include "../World/Block/BlockId.h"
+#include "World/Block/BlockId.h"
 #include <string>
 
 #include "../Util/NonCopyable.h"
@@ -31,6 +31,8 @@ struct Material : public NonCopyable {
     BlockId toBlockID() const;
 
     static const Material &toMaterial(BlockId id);
+
+    const std::string getItemName() const { return this->name; };
 
     const Material::ID id;
     const int maxStackSize;
