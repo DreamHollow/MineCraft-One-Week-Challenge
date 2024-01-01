@@ -8,6 +8,7 @@
 #include "FloraRenderer.h"
 #include "SkyboxRenderer.h"
 #include "WaterRenderer.h"
+#include "Audio/AudioRenderer.h"
 
 class Camera;
 class ChunkSection;
