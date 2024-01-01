@@ -78,6 +78,7 @@ add_executable(mc-one-week
     Source/Renderer/ChunkRenderer.cpp
     Source/Renderer/SkyboxRenderer.cpp
     Source/Renderer/FloraRenderer.cpp
+    Source/Audio/AudioRenderer.cpp
     Source/Model.cpp
 )
 
