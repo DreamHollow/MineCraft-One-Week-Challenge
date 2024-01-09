@@ -232,12 +232,15 @@ void Player::mouseInput(const sf::Window &window)
         return;
     }
 
+    // BOUND constant only allows player to look straight up or down
     static float const BOUND = 89.f;
-    static auto lastMousePosition = sf::Mouse::getPosition(window);
+
+    static sf::Vector2i lastMousePosition = sf::Mouse::getPosition(window);
     auto change = sf::Mouse::getPosition() - lastMousePosition;
 
-    rotation.y += change.x * 0.05f;
-    rotation.x += change.y * 0.05f;
+    // Previous value was 0.05.f but 0.07f feels more "snappy"
+    rotation.y += change.x * 0.07f;
+    rotation.x += change.y * 0.07f;
 
     if (rotation.x > BOUND)
         rotation.x = BOUND;
