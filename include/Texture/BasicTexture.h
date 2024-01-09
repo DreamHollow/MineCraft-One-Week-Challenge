@@ -6,7 +6,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 
-#include "../Util/NonCopyable.h"
+#include "Util/NonCopyable.h"
 
 /// @brief Standard texture that will be mapped to objects.
 class BasicTexture : public NonCopyable {
