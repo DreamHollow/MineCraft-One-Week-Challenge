@@ -42,13 +42,6 @@ sh scripts/build.sh
 sh scripts/run.sh
 ```
 
-#### Release
-
-```sh
-sh scripts/build.sh release
-sh scripts/run.sh release
-```
-
 ## The Challenge
 
 ### Day One
