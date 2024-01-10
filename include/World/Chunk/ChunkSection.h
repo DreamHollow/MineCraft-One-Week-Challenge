@@ -4,13 +4,13 @@
 #include <SFML/Graphics.hpp>
 #include <array>
 
-#include "../Block/ChunkBlock.h"
-#include "../WorldConstants.h"
+#include "World/Block/ChunkBlock.h"
+#include "World/WorldConstants.h"
 #include "ChunkMesh.h"
 #include "IChunk.h"
 
-#include "../../Physics/AABB.h"
-#include "../Block/BlockData.h"
+#include "Physics/AABB.h"
+#include "World/Block/BlockData.h"
 
 class World;
 

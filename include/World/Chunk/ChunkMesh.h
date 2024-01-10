@@ -1,7 +1,7 @@
 #ifndef CHUNKMESH_H_INCLUDED
 #define CHUNKMESH_H_INCLUDED 1
 
-#include "../../Model.h"
+#include "Model.h"
 
 #include <SFML/Graphics.hpp>
 #include <array>

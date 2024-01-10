@@ -1,8 +1,8 @@
 #ifndef CHUNK_H_INCLUDED
 #define CHUNK_H_INCLUDED 1
 
-#include "../../Util/Array2D.h"
-#include "../../Util/NonCopyable.h"
+#include "Util/Array2D.h"
+#include "Util/NonCopyable.h"
 #include "ChunkSection.h"
 #include <vector>
 

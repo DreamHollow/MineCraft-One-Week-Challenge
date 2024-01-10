@@ -14,6 +14,7 @@ void ChunkRenderer::add(const ChunkMesh &mesh)
 
 void ChunkRenderer::render(const Camera &camera)
 {
+    // If the chunk isn't loaded in, don't try to render it.
     if (m_chunks.empty()) {
         return;
     }

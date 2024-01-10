@@ -5,8 +5,8 @@
 #include <memory>
 #include <unordered_map>
 
-#include "../../Maths/Vector2XZ.h"
-#include "../Generation/Terrain/TerrainGenerator.h"
+#include "Maths/Vector2XZ.h"
+#include "World/Generation/Terrain/TerrainGenerator.h"
 #include "Chunk.h"
 
 class World;

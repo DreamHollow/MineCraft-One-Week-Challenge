@@ -6,7 +6,7 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 
-#include "../Block/ChunkBlock.h"
+#include "World/Block/ChunkBlock.h"
 
 class ChunkSection;
 class ChunkMesh;
