@@ -10,6 +10,11 @@ Application::Application(const Config &config)
 {
     BlockDatabase::get();
     pushState<StatePlay>(*this, config);
+
+    //if(debug)
+    //{
+        //std::cout << db_string << "Debugging is ON.\n";
+    //}
 }
 
 float g_timeElapsed = 0;
@@ -43,7 +48,7 @@ void Application::runLoop()
     m_context.window.setPosition(win_center);
 
     while (m_context.window.isOpen() && !m_states.empty()) {
-        auto deltaTime = dtTimer.restart();
+        sf::Time deltaTime = dtTimer.restart();
         auto &state = *m_states.back();
 
         state.handleInput();
