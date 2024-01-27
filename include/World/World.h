@@ -7,13 +7,13 @@
 #include <thread>
 #include <vector>
 
-#include "../Util/NonCopyable.h"
+#include "Util/NonCopyable.h"
 #include "Chunk/Chunk.h"
 #include "Chunk/ChunkManager.h"
 
 #include "Event/IWorldEvent.h"
 
-#include "../Config.h"
+#include "Config.h"
 
 class RenderMaster;
 class Camera;
