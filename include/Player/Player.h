@@ -5,9 +5,10 @@
 #include <SFML/Audio.hpp>
 #include <vector>
 
-#include "../Entity.h"
-#include "../Input/ToggleKey.h"
-#include "../Item/ItemStack.h"
+#include "Entity.h"
+#include "Input/ToggleKey.h"
+#include "Item/ItemStack.h"
+#include "Debugger/Debugger.h"
 
 class Keyboard;
 class World;
