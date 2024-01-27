@@ -31,9 +31,21 @@ void PlayerDigEvent::dig(World &world)
 
     switch (m_buttonPress) {
         case sf::Mouse::Button::Left: {
-            auto block = world.getBlock(x, y, z); // Get actual block data
-            const auto &material = Material::toMaterial((BlockId)block.id); // Copy block material
-            m_pPlayer->addItem(material);
+            ChunkBlock block = world.getBlock(x, y, z); // Get actual block data
+
+            if(block.id != NULL)
+            {
+                const Material &temp_material = Material::toMaterial((BlockId)block.id);
+            }
+
+            //const auto &material = Material::toMaterial((BlockId)block.id); // Copy block material
+
+            // Evaluate
+            //if(material.id != NULL)
+            //{
+                //m_pPlayer->addItem(material);
+            //}
+
             /*
                         auto r = 1;
                         for (int y = -r; y < r; y++)
@@ -53,8 +65,8 @@ void PlayerDigEvent::dig(World &world)
         }
 
         case sf::Mouse::Button::Right: {
-            auto &stack = m_pPlayer->getHeldItems();
-            auto &material = stack.getMaterial();
+            ItemStack &stack = m_pPlayer->getHeldItems();
+            const Material &material = stack.getMaterial();
 
             if (material.id == Material::ID::Nothing) {
                 return;
