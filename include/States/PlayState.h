@@ -4,10 +4,10 @@
 #include "../Player/Player.h"
 #include "StateBase.h"
 
-#include "../Input/Keyboard.h"
-#include "../Util/FPSCounter.h"
-#include "../World/Chunk/Chunk.h"
-#include "../World/World.h"
+#include "Input/Keyboard.h"
+#include "Util/FPSCounter.h"
+#include "World/Chunk/Chunk.h"
+#include "World/World.h"
 
 /// @brief Active game playing state, not associated with game menus.
 class StatePlay : public StateBase {
