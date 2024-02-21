@@ -1,7 +1,7 @@
 #ifndef BLOCKDATA_H_INCLUDED
 #define BLOCKDATA_H_INCLUDED 1
 
-#include "../../Util/NonCopyable.h"
+#include "Util/NonCopyable.h"
 #include "BlockId.h"
 #include <SFML/Graphics.hpp>
 
