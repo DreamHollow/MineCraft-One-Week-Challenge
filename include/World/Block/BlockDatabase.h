@@ -4,12 +4,12 @@
 #include <array>
 #include <memory>
 
-#include "../../Util/Singleton.h"
+#include "Util/Singleton.h"
 
 #include "BlockId.h"
 #include "BlockTypes/BlockType.h"
 
-#include "../../Texture/TextureAtlas.h"
+#include "Texture/TextureAtlas.h"
 
 /// @brief Singleton class that determines status and ID of blocks as a whole.
 class BlockDatabase : public Singleton {
