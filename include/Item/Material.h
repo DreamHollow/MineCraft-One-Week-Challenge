@@ -41,7 +41,8 @@ struct Material : public NonCopyable {
 };
 
 namespace std {
-template <> struct hash<Material::ID> {
+template <> struct hash<Material::ID>
+{
     size_t operator()(const Material::ID &id) const
     {
         std::hash<Material::ID> hasher;
