@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 #Set up project
-project(mc-one-week VERSION 1.0)
+project(mc-one-week VERSION 2.0)
 
 configure_file(config.txt ${CMAKE_BINARY_DIR}/config.txt COPYONLY)
 
@@ -11,7 +11,6 @@ add_custom_target(copy_resources ALL
     ${PROJECT_SOURCE_DIR}/Res
     ${PROJECT_BINARY_DIR}/Res
     COMMENT "Copying game resources into Res folder")
-
 
 add_custom_target(copy_shaders ALL
     COMMAND ${CMAKE_COMMAND} -E copy_directory
