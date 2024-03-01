@@ -4,12 +4,17 @@
 #include "Player/Player.h"
 #include "World/World.h"
 
+/// @brief Event class type but intentionally initialized to nothing.
+/// @param button 
+/// @param location 
+/// @param player 
 PlayerDigEvent::PlayerDigEvent(sf::Mouse::Button button,
                                const glm::vec3 &location, Player &player)
     : m_buttonPress(button)
     , m_digSpot(location)
     , m_pPlayer(&player)
 {
+
 }
 
 void PlayerDigEvent::handle(World &world)
@@ -29,23 +34,32 @@ void PlayerDigEvent::dig(World &world)
     int y = static_cast<int>(m_digSpot.y);
     int z = static_cast<int>(m_digSpot.z);
 
-    switch (m_buttonPress) {
-        case sf::Mouse::Button::Left: {
+    switch (m_buttonPress)
+    {
+        case sf::Mouse::Button::Left:
+        {
             ChunkBlock block = world.getBlock(x, y, z); // Get actual block data
 
-            if(block.id != NULL)
+            //const Material &temp_material = Material::toMaterial((BlockId)block.id);
+
+            const auto &material = Material::toMaterial((BlockId)block.id); // Copy block material
+
+            // Catch that an air block is being added BEFORE placing in inventory
+            if(material.id != Material::ID::Nothing)
             {
-                const Material &temp_material = Material::toMaterial((BlockId)block.id);
+                m_pPlayer->addItem(material);
+
+                // Comment this out unless object pickup isn't working at all.
+                /*
+                if(debug)
+                {
+                    std::cout << db_string << "Player should now have: ";
+                    std::cout << material.getItemName() << "\n";
+                }
+                */
             }
 
-            //const auto &material = Material::toMaterial((BlockId)block.id); // Copy block material
-
-            // Evaluate
-            //if(material.id != NULL)
-            //{
-                //m_pPlayer->addItem(material);
-            //}
-
+            // None of this would do anything, it's handled by the world.
             /*
                         auto r = 1;
                         for (int y = -r; y < r; y++)
@@ -58,20 +72,24 @@ void PlayerDigEvent::dig(World &world)
                             world.updateChunk   (newX, newY, newZ);
                             world.setBlock      (newX, newY, newZ, 0);
             */
+
             world.updateChunk(x, y, z);
             world.setBlock(x, y, z, 0);
-            //}
+
             break;
         }
-
-        case sf::Mouse::Button::Right: {
+        case sf::Mouse::Button::Right:
+        {
             ItemStack &stack = m_pPlayer->getHeldItems();
             const Material &material = stack.getMaterial();
 
-            if (material.id == Material::ID::Nothing) {
+            // Ideally player can't hold this anyway, but just in case.
+            if (material.id == Material::ID::Nothing)
+            {
                 return;
             }
-            else {
+            else
+            {
                 stack.remove();
                 world.updateChunk(x, y, z);
                 world.setBlock(x, y, z, material.toBlockID());
@@ -79,6 +97,8 @@ void PlayerDigEvent::dig(World &world)
             }
         }
         default:
+        {
             break;
-    }
+        }
+    };
 }
