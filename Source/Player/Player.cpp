@@ -54,7 +54,7 @@ void Player::addItem(const Material &material)
 
     for (unsigned i = 0; i < m_items.size(); i++) {
         if (m_items[i].getMaterial().id == id) {
-            /*int leftOver =*/m_items[i].add(1);
+            m_items[i].add(1);
 
             return;
         }
@@ -155,28 +155,35 @@ void Player::collide(World &world, const glm::vec3 &vel)//, float dt)
                  z < position.z + box.dimensions.z; z++) {
                 auto block = world.getBlock(x, y, z);
 
-                if (block != 0 && block.getData().isCollidable) {
-                    if (vel.y > 0) {
+                if (block != 0 && block.getData().isCollidable)
+                {
+                    if (vel.y > 0)
+                    {
                         position.y = y - box.dimensions.y;
                         velocity.y = 0;
                     }
-                    else if (vel.y < 0) {
+                    else if (vel.y < 0) // If colliding with ground
+                    {
                         m_isOnGround = true;
                         position.y = y + box.dimensions.y + 1;
                         velocity.y = 0;
                     }
 
-                    if (vel.x > 0) {
+                    if (vel.x > 0)
+                    {
                         position.x = x - box.dimensions.x;
                     }
-                    else if (vel.x < 0) {
+                    else if (vel.x < 0)
+                    {
                         position.x = x + box.dimensions.x + 1;
                     }
 
-                    if (vel.z > 0) {
+                    if (vel.z > 0)
+                    {
                         position.z = z - box.dimensions.z;
                     }
-                    else if (vel.z < 0) {
+                    else if (vel.z < 0)
+                    {
                         position.z = z + box.dimensions.z + 1;
                     }
                 }
@@ -188,7 +195,8 @@ float speed = 0.2f;
 
 void Player::keyboardInput(Keyboard &keyboard)
 {
-    if (keyboard.isKeyDown(sf::Keyboard::W)) {
+    if (keyboard.isKeyDown(sf::Keyboard::W))
+    {
         float s = speed;
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::LControl))
             s *= 5;
@@ -198,20 +206,24 @@ void Player::keyboardInput(Keyboard &keyboard)
         m_acceleration.x += -glm::cos(glm::radians(rotation.y + 90)) * s;
         m_acceleration.z += -glm::sin(glm::radians(rotation.y + 90)) * s;
     }
-    if (keyboard.isKeyDown(sf::Keyboard::S)) {
+    if (keyboard.isKeyDown(sf::Keyboard::S))
+    {
         m_acceleration.x += glm::cos(glm::radians(rotation.y + 90)) * speed;
         m_acceleration.z += glm::sin(glm::radians(rotation.y + 90)) * speed;
     }
-    if (keyboard.isKeyDown(sf::Keyboard::A)) {
+    if (keyboard.isKeyDown(sf::Keyboard::A))
+    {
         m_acceleration.x += -glm::cos(glm::radians(rotation.y)) * speed;
         m_acceleration.z += -glm::sin(glm::radians(rotation.y)) * speed;
     }
-    if (keyboard.isKeyDown(sf::Keyboard::D)) {
+    if (keyboard.isKeyDown(sf::Keyboard::D))
+    {
         m_acceleration.x += glm::cos(glm::radians(rotation.y)) * speed;
         m_acceleration.z += glm::sin(glm::radians(rotation.y)) * speed;
     }
 
-    if (keyboard.isKeyDown(sf::Keyboard::Space)) {
+    if (keyboard.isKeyDown(sf::Keyboard::Space))
+    {
         jump();
     }
     else if (keyboard.isKeyDown(sf::Keyboard::LShift) && m_isFlying) {
@@ -224,11 +236,13 @@ void Player::mouseInput(const sf::Window &window)
     static bool useMouse = true;
     static ToggleKey useMouseKey(sf::Keyboard::L);
 
-    if (useMouseKey.isKeyPressed()) {
+    if (useMouseKey.isKeyPressed())
+    {
         useMouse = !useMouse;
     }
 
-    if (!useMouse) {
+    if (!useMouse)
+    {
         return;
     }
 
@@ -262,7 +276,8 @@ void Player::mouseInput(const sf::Window &window)
 
 void Player::draw()//RenderMaster &master)
 {
-    for (unsigned i = 0; i < m_items.size(); i++) {
+    for (unsigned i = 0; i < m_items.size(); i++)
+    {
         sf::Text &t = m_itemText[i];
         if (i == (unsigned)m_heldItem) {
             t.setFillColor(sf::Color::Red);
@@ -282,16 +297,20 @@ void Player::draw()//RenderMaster &master)
     m_posPrint.setString(stream.str());
 }
 
+/// @brief Checks if Player is more or less on "floor" then jumps.
 void Player::jump()
 {
-    if (!m_isFlying) {
-        if (m_isOnGround) {
+    if (!m_isFlying)
+    {
+        if (m_isOnGround)
+        {
 
             m_isOnGround = false;
             m_acceleration.y += speed * 50;
         }
     }
-    else {
+    else
+    {
         m_acceleration.y += speed * 3;
     }
 }
