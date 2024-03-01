@@ -58,6 +58,10 @@ void loadConfig(Config &config)
             outfile.close();
             configFile.close(); // Close so it can be reopened safely.
         }
+        else
+        {
+            throw std::runtime_error("Could not generate new configurations!");
+        }
 
         std::cout << "\n";
         std::cout << "New configuration file created." << "\n";
@@ -78,8 +82,7 @@ void loadConfig(Config &config)
             std::cout << "To understand why this error may have occured,\n";
             std::cout << "please examine your 'config.txt' file. Thank you." << "\n";
 
-            // Because this is thrown before runtime, no memory needs to be freed.
-            throw "Unable to load configuration file.";
+            throw std::runtime_error("Unable to load configuration file.");
         }
 
         if (configFile.is_open())
@@ -107,6 +110,8 @@ void loadConfig(Config &config)
                 }
             }
         }
+
+        configFile.close();
     }
     catch(const std::exception& e)
     {
