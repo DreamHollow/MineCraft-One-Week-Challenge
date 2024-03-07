@@ -3,17 +3,17 @@
 
 #include "TerrainGenerator.h"
 
-#include "../../../Util/Array2D.h"
-#include "../../../Util/Random.h"
+#include "Util/Array2D.h"
+#include "Util/Random.h"
 
-#include "../../../Maths/NoiseGenerator.h"
-#include "../../WorldConstants.h"
+#include "Maths/NoiseGenerator.h"
+#include "World/WorldConstants.h"
 
-#include "../Biome/DesertBiome.h"
-#include "../Biome/GrasslandBiome.h"
-#include "../Biome/LightForest.h"
-#include "../Biome/OceanBiome.h"
-#include "../Biome/TemperateForestBiome.h"
+#include "World/Generation/Biome/DesertBiome.h"
+#include "World/Generation/Biome/GrasslandBiome.h"
+#include "World/Generation/Biome/LightForest.h"
+#include "World/Generation/Biome/OceanBiome.h"
+#include "World/Generation/Biome/TemperateForestBiome.h"
 
 class Chunk;
 
