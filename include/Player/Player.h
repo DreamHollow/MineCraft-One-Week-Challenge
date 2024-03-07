@@ -32,17 +32,21 @@ class Player : public Entity {
 
   private:
     void jump();
+    void die();
 
     void keyboardInput(Keyboard &keyboard);
     void mouseInput(const sf::Window &window);
     bool m_isOnGround = false;
     bool m_isFlying = false;
     bool m_isSneak = false;
+    bool m_canJump = false;
 
     std::vector<ItemStack> m_items;
     std::vector<sf::Text> m_itemText;
     sf::Text m_posPrint;
     int m_heldItem = 0;
+
+    int health = 0;
 
     ToggleKey m_itemDown;
     ToggleKey m_itemUp;
