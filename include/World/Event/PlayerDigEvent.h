@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "../../Maths/glm.h"
+#include "Maths/glm.h"
 #include "IWorldEvent.h"
 
 class Player;
@@ -24,4 +24,4 @@ class PlayerDigEvent : public IWorldEvent {
     Player *m_pPlayer;
 };
 
-#endif // PLAYERDIGEVENT_H_INCLUDED
+#endif
