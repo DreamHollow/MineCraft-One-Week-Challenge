@@ -11,6 +11,8 @@
 #include "World/World.h"
 
 sf::Font f;
+sf::Clock jump_timer;
+sf::Time milli = sf::milliseconds(150);
 
 Player::Player()
     : Entity({2500, 125, 2500}, {0.f, 0.f, 0.f}, {0.3f, 1.f, 0.3f})
@@ -28,6 +30,8 @@ Player::Player()
 {
     f.loadFromFile("Res/Fonts/rs.ttf");
 
+    health = 100;
+
     for (int i = 0; i < 5; i++) {
         m_items.emplace_back(Material::NOTHING, 0);
     }
@@ -44,6 +48,8 @@ Player::Player()
     m_posPrint.setOutlineColor(sf::Color::Black);
     m_posPrint.setCharacterSize(25);
     m_posPrint.setPosition(20.0f, 20.0f * 6.0f + 100.0f);
+
+    m_canJump = true;
 }
 
 // TODO: Fix player bug where held item is out of order in placement array.
@@ -143,6 +149,14 @@ void Player::update(float dt, World &world)
     velocity.z *= 0.95f;
     if (m_isFlying) {
         velocity.y *= 0.95f;
+    }
+
+    if(!m_canJump)
+    {
+        if(jump_timer.getElapsedTime().asMilliseconds() >= milli.asMilliseconds())
+        {
+            m_canJump = true;
+        }
     }
 }
 
@@ -302,15 +316,22 @@ void Player::jump()
 {
     if (!m_isFlying)
     {
-        if (m_isOnGround)
+        if (m_isOnGround && m_canJump)
         {
-
             m_isOnGround = false;
             m_acceleration.y += speed * 50;
+            m_canJump = false;
+            jump_timer.restart();
         }
     }
     else
     {
         m_acceleration.y += speed * 3;
     }
+}
+
+/// @brief Player enters death event, forcing return to respawn.
+void Player::die()
+{
+
 }
