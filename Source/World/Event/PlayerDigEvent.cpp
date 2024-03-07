@@ -4,7 +4,7 @@
 #include "Player/Player.h"
 #include "World/World.h"
 
-/// @brief Event class type but intentionally initialized to nothing.
+/// @brief Event class that handles block placement.
 /// @param button 
 /// @param location 
 /// @param player 
