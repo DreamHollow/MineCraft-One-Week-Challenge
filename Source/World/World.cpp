@@ -17,8 +17,12 @@ World::World(const Camera &camera, const Config &config, Player &player)
     setSpawnPoint();
     player.position = m_playerSpawnPoint;
 
+    // Save this data elsewhere
+
+    //std::ofstream output_file("world_save.txt");
+
     for (int i = 0; i < 1; i++) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(2000)); // 200 normally
+        std::this_thread::sleep_for(std::chrono::milliseconds(500)); // 200 normally
         m_chunkLoadThreads.emplace_back([&]() { loadChunks(camera); });
     }
 }
