@@ -1,7 +1,7 @@
 #ifndef BLOCKTYPE_H_INCLUDED
 #define BLOCKTYPE_H_INCLUDED
 
-#include "../BlockData.h"
+#include "World/Block/BlockData.h"
 
 class BlockType : public NonCopyable {
   public:
