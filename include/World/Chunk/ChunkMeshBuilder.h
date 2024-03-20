@@ -15,6 +15,7 @@ class BlockData;
 struct ChunkMeshCollection;
 struct BlockDataHolder;
 
+/// @brief Chunk mesh handler that actually creates the meshes.
 class ChunkMeshBuilder {
   public:
     ChunkMeshBuilder(ChunkSection &chunk, ChunkMeshCollection &meshes);
@@ -45,4 +46,4 @@ class ChunkMeshBuilder {
     const BlockDataHolder *m_pBlockData = nullptr;
 };
 
-#endif // CHUNKMESHBUILDER_H_INCLUDED
+#endif
