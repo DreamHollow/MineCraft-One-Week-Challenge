@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <functional>
 
+/// @brief Struct related specifically X and Z vectors to avoid affecting Y.
 struct VectorXZ {
     int x, z;
 };
@@ -22,7 +23,7 @@ template <> struct hash<VectorXZ> {
         return std::hash<decltype(vect.x)>{}((hash1 ^ hash2) >> 2);
     }
 };
-} // namespace std
+}
 
 namespace std {
 template <> struct hash<sf::Vector3i> {
@@ -38,6 +39,6 @@ template <> struct hash<sf::Vector3i> {
             (hash1 ^ (hash2 << hash3) ^ hash3));
     }
 };
-} // namespace std
+}
 
-#endif // VECTOR2XZ_H_INCLUDED
+#endif
