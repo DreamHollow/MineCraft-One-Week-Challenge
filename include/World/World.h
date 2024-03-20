@@ -18,7 +18,6 @@
 class RenderMaster;
 class Camera;
 class Player;
-
 struct Entity;
 
 /// @brief Massive class designed to hold multiple chunks, the player, and most game aspects.
@@ -28,6 +27,7 @@ class World : public NonCopyable {
     ~World();
 
     ChunkBlock getBlock(int x, int y, int z);
+    //ChunkBlock getBlockStatus(int x, int y, int z);
     void setBlock(int x, int y, int z, ChunkBlock block);
 
     void update(const Camera &camera);
