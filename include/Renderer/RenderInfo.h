@@ -1,8 +1,9 @@
 #ifndef RENDERINFO_H_INCLUDED
 #define RENDERINFO_H_INCLUDED 1
 
+/// @brief OpenGL adjacent struct that helps with VAO binding.
 struct RenderInfo {
-    GLuint vao = 0; // Vertex Array Object
+    GLuint vao = 0;
     GLuint indicesCount = 0;
 
     inline void reset()
@@ -12,4 +13,4 @@ struct RenderInfo {
     }
 };
 
-#endif // RENDERINFO_H_INCLUDED
+#endif
