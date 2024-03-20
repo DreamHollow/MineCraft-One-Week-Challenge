@@ -2,13 +2,13 @@
 #define PLAYER_H_INCLUDED 1
 
 #include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
 #include <vector>
 
 #include "Entity.h"
 #include "Input/ToggleKey.h"
 #include "Item/ItemStack.h"
 #include "Debugger/Debugger.h"
+#include "Audio/MusicPlayer.h"
 
 class Keyboard;
 class World;
@@ -21,7 +21,7 @@ class Player : public Entity {
 
     void handleInput(const sf::Window &window, Keyboard &keyboard);
 
-    void update(float dt, World &wolrd);
+    void update(float dt, World &world);
     void collide(World &world, const glm::vec3 &vel);//, float dt);
 
     void addItem(const Material &material);
@@ -61,6 +61,10 @@ class Player : public Entity {
     ToggleKey m_slow;
 
     glm::vec3 m_acceleration;
+
+    //AudioPlayer m_player_dig;
+    sf::Clock jump_timer;
+    sf::Time milli = sf::milliseconds(100);
 };
 
 #endif // PLAYER_H_INCLUDED
