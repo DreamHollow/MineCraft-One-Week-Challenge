@@ -40,7 +40,8 @@ Model &Model::operator=(Model &&other)
 
 void Model::genVAO()
 {
-    // If the render info is not null, delete this data during generation.
+    // Basically, if the VAO is 0 it means nothing was bound to it.
+    // Anything actually allocated to VAO should be cleared.
     if (m_renderInfo.vao != 0)
         deleteData();
 
@@ -64,7 +65,7 @@ void Model::addData(const Mesh &mesh)
     addEBO(mesh.indices);
 }
 
-/// @brief Adds a Vertex Array Object for OpenGL.
+/// @brief Prepares the OpenGL buffer for rendering.
 /// @param dimensions 
 /// @param data 
 void Model::addVBO(int dimensions, const std::vector<GLfloat> &data)
@@ -83,7 +84,7 @@ void Model::addVBO(int dimensions, const std::vector<GLfloat> &data)
     m_buffers.push_back(vbo);
 }
 
-/// @brief Add an Element Buffer Object.
+/// @brief Preps the Element Buffer Object for multiple triangle rendering.
 /// @param indices 
 void Model::addEBO(const std::vector<GLuint> &indices)
 {
@@ -95,7 +96,7 @@ void Model::addEBO(const std::vector<GLuint> &indices)
                  indices.data(), GL_STATIC_DRAW);
 }
 
-/// @brief Deletes model data, used to free models from memory.
+/// @brief Deletes model data no longer in use.
 void Model::deleteData()
 {
     if (m_renderInfo.vao)
