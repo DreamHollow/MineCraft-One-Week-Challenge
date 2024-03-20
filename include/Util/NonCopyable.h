@@ -8,4 +8,4 @@ struct NonCopyable {
     NonCopyable &operator=(const NonCopyable &) = delete;
 };
 
-#endif // NONCOPYABLE_H_INCLUDED
+#endif
