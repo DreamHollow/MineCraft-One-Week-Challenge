@@ -13,6 +13,7 @@ void RenderMaster::drawChunk(const ChunkSection &chunk)
     const auto &solidMesh = chunk.getMeshes().solidMesh;
     const auto &waterMesh = chunk.getMeshes().waterMesh;
     const auto &floraMesh = chunk.getMeshes().floraMesh;
+    const auto &ghostMesh = chunk.getMeshes().ghostMesh;
 
     if (solidMesh.faces > 0)
         m_chunkRenderer.add(solidMesh);
@@ -22,6 +23,11 @@ void RenderMaster::drawChunk(const ChunkSection &chunk)
 
     if (floraMesh.faces > 0)
         m_floraRenderer.add(floraMesh);
+
+    if (ghostMesh.faces > 0)
+    {
+        m_ghostRenderer.add(ghostMesh);
+    }
 }
 
 void RenderMaster::drawSky()
@@ -39,12 +45,28 @@ void RenderMaster::finishRender(sf::Window &window, const Camera &camera)
     m_chunkRenderer.render(camera);
     m_waterRenderer.render(camera);
     m_floraRenderer.render(camera);
+    m_ghostRenderer.render(camera);
 
     if (m_drawBox) {
         glDisable(GL_CULL_FACE);
         m_skyboxRenderer.render(camera);
         m_drawBox = false;
     }
+
+    // Leave this disabled unless you want music on load.
+    /*
+    while(!m_musicPlayer.is_loaded() && m_musicPlayer.tries < 3)
+    {
+        m_musicPlayer.add("TidalShift.ogg");
+
+        if(m_musicPlayer.is_playing() == false)
+        {
+            m_musicPlayer.play();
+        }
+
+        m_musicPlayer.tries++;
+    }
+    */
 
     window.display();
 }
