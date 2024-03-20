@@ -21,6 +21,7 @@ ClassicOverWorldGenerator::ClassicOverWorldGenerator()
     , m_desertBiome(seed)
     , m_oceanBiome(seed)
     , m_lightForest(seed)
+    , m_badLands(seed)
 {
     setUpNoise();
 }
@@ -193,14 +194,26 @@ const Biome &ClassicOverWorldGenerator::getBiome(int x, int z) const
 {
     int biomeValue = m_biomeMap.get(x, z);
 
+    /*
+        Noise generation works like this:
+        Low noise means easier to generate but circumstances
+        may cause it to be difficult to find.
+
+        High noise means it's more likely to generate,
+        but it might randomly blend in with other biomes.
+    */
+
     if (biomeValue > 160) {
         return m_oceanBiome;
     }
-    else if (biomeValue > 150) {
+    else if (biomeValue > 150) { // Original value: 150
         return m_grassBiome;
     }
-    else if (biomeValue > 130) {
+    else if (biomeValue > 140) {
         return m_lightForest;
+    }
+    else if (biomeValue > 130) {
+        return m_badLands; // new biome type
     }
     else if (biomeValue > 120) {
         return m_temperateForest;
