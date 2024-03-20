@@ -33,6 +33,7 @@ add_executable(mc-one-week
     Source/World/Generation/Biome/LightForest.cpp
     Source/World/Generation/Biome/Biome.cpp
     Source/World/Generation/Biome/DesertBiome.cpp
+    Source/World/Generation/Biome/BadlandsBiome.cpp
     Source/World/Generation/Biome/GrasslandBiome.cpp
     Source/World/Generation/Biome/TemperateForestBiome.cpp
     Source/World/Generation/Biome/OceanBiome.cpp
@@ -67,6 +68,7 @@ add_executable(mc-one-week
     Source/Util/FileUtil.cpp
     Source/Shaders/FloraShader.cpp
     Source/Shaders/WaterShader.cpp
+    Source/Shaders/GhostShader.cpp
     Source/Shaders/SkyboxShader.cpp
     Source/Shaders/Shader.cpp
     Source/Shaders/ChunkShader.cpp
@@ -77,7 +79,10 @@ add_executable(mc-one-week
     Source/Renderer/ChunkRenderer.cpp
     Source/Renderer/SkyboxRenderer.cpp
     Source/Renderer/FloraRenderer.cpp
-    Source/Audio/AudioRenderer.cpp
+    Source/Renderer/GhostRenderer.cpp
+    Source/Audio/Track.cpp
+    Source/Audio/AudioPlayer.cpp
+    Source/Audio/MusicPlayer.cpp
     Source/Model.cpp
 )
 
