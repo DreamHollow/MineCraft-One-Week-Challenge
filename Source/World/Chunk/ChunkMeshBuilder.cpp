@@ -146,6 +146,10 @@ void ChunkMeshBuilder::setActiveMesh(ChunkBlock block)
         case BlockShaderType::Flora:
             m_pActiveMesh = &m_pMeshes->floraMesh;
             break;
+
+        case BlockShaderType::Ghost:
+            m_pActiveMesh = &m_pMeshes->ghostMesh;
+            break;
     }
 }
 
