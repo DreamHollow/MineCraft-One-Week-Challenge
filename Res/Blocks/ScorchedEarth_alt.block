@@ -1,0 +1,26 @@
+Name
+Badlands
+
+Id
+16
+
+TexTop
+11 1
+
+TexSide
+10 1
+
+TexBottom
+2 0
+
+Opaque
+1
+
+MeshType
+0
+
+ShaderType
+0
+
+Collidable
+1
