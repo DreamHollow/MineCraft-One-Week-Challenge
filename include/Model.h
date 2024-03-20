@@ -37,4 +37,4 @@ class Model : public NonCopyable {
     std::vector<GLuint> m_buffers;
 };
 
-#endif // MODEL_H_INCLUDED
+#endif
