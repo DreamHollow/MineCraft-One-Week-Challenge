@@ -14,6 +14,7 @@
 #include "World/Generation/Biome/LightForest.h"
 #include "World/Generation/Biome/OceanBiome.h"
 #include "World/Generation/Biome/TemperateForestBiome.h"
+#include "World/Generation/Biome/BadlandsBiome.h"
 
 class Chunk;
 
@@ -48,6 +49,7 @@ class ClassicOverWorldGenerator : public TerrainGenerator {
     DesertBiome m_desertBiome;
     OceanBiome m_oceanBiome;
     LightForest m_lightForest;
+    BadlandsBiome m_badLands;
 
     Chunk *m_pChunk = nullptr;
 };
