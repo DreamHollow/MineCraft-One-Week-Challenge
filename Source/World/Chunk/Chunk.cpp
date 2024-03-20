@@ -17,6 +17,9 @@ Chunk::Chunk(World &world, const sf::Vector2i &location)
     m_highestBlocks.setAll(0);
 }
 
+/// @brief Culls unused meshes outside of player view.
+/// @param camera 
+/// @return 
 bool Chunk::makeMesh(const Camera &camera)
 {
     for (auto &chunk : m_chunks) {
