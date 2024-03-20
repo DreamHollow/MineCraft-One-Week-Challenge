@@ -10,11 +10,6 @@ Application::Application(const Config &config)
 {
     BlockDatabase::get();
     pushState<StatePlay>(*this, config);
-
-    //if(debug)
-    //{
-        //std::cout << db_string << "Debugging is ON.\n";
-    //}
 }
 
 float g_timeElapsed = 0;
