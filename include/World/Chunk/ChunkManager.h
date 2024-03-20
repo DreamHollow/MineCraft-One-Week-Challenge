@@ -13,7 +13,7 @@ class World;
 
 using ChunkMap = std::unordered_map<VectorXZ, Chunk>;
 
-/// @brief Dynamic chunk manager that affects chunk and block placement.
+/// @brief Dynamic chunk manager. Affects rendering and chunk placement.
 class ChunkManager {
   public:
     ChunkManager(World &world);
