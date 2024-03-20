@@ -22,4 +22,4 @@ class WaterRenderer {
     WaterShader m_shader;
 };
 
-#endif // WATERRENDERER_H_INCLUDED
+#endif
