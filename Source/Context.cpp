@@ -6,6 +6,8 @@
 unsigned int g_X;
 unsigned int g_Y;
 
+/// @brief Context, as in window context to be used by SFML windows.
+/// @param config 
 Context::Context(const Config &config)
 {
     sf::ContextSettings settings;
@@ -26,6 +28,7 @@ Context::Context(const Config &config)
         window.create(winMode, "MineCraft Week", sf::Style::Close, settings);
     }
 
+    // Just make sure GLAD is operating with OpenGL, or else throw an error.
     if (!gladLoadGL()) {
 
         exit(-1);
