@@ -4,11 +4,10 @@
 #include "Maths/glm.h"
 
 /// @brief Collision detection class for 3D environment.
-class AABB {
-public:
-    AABB(const glm::vec3 &dim)
-        : dimensions(dim)
+struct AABB {
+    AABB(const glm::vec3 &dim) : dimensions(dim)
     {
+        
     }
 
     void update(const glm::vec3 &location)
@@ -16,6 +15,9 @@ public:
         position = location;
     }
 
+    /// @brief Gets the normals of a given vector.
+    /// @param normal 
+    /// @return 
     glm::vec3 getVN(const glm::vec3 &normal) const
     {
         glm::vec3 res = position;
