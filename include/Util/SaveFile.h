@@ -5,6 +5,8 @@
 #include <filesystem>
 #include <sstream>
 
+// This class currently doesn't do anything, but is designed to save World data.
+
 class SaveFile
 {
 public:
