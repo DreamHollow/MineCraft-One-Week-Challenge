@@ -7,4 +7,4 @@
 class Singleton : public NonMovable, public NonCopyable {
 };
 
-#endif // SINGLETON_H_INCLUDED
+#endif
