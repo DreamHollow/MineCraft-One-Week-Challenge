@@ -11,12 +11,12 @@ extern "C" {
 __declspec(dllexport) bool NvOptimusEnablement = true;
 __declspec(dllexport) bool AmdPowerXpressRequestHighPerformance = true;
 }
-#endif // __WIN32
+#endif // Windows
 
 namespace {
 void loadConfig(Config &config);
 void displayInfo();
-} // namespace
+}
 
 int main()
 {
@@ -40,6 +40,7 @@ void loadConfig(Config &config)
     std::string key;
 
     // If the config file is missing or "bad"
+    // This is pretty hacky and not a great implementation for a replacement
     if(!configFile.good())
     {
         std::cout << "Configuration file invalid,\n";
@@ -76,7 +77,7 @@ void loadConfig(Config &config)
         }
 
         // If the file is still creating errors
-        if(configFile.fail())
+        if(configFile.fail() || configFile.bad())
         {
             std::cout << "Error: The program failed to load the configuration files." << "\n";
             std::cout << "To understand why this error may have occured,\n";
@@ -128,4 +129,4 @@ void displayInfo()
         std::cout << line << "\n";
     }
 }
-} // namespace
+}
