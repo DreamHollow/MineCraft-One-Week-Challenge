@@ -30,9 +30,14 @@ void PlayerDigEvent::handle(World &world)
 
 void PlayerDigEvent::dig(World &world)
 {
+    // Cast a ray to the point to find where player is digging
+
     int x = static_cast<int>(m_digSpot.x);
     int y = static_cast<int>(m_digSpot.y);
     int z = static_cast<int>(m_digSpot.z);
+
+    // For classic, instant dig, use "instant" protocol
+    // For more gradual "modern" dig, give blocks destroy time
 
     switch (m_buttonPress)
     {
@@ -40,38 +45,13 @@ void PlayerDigEvent::dig(World &world)
         {
             ChunkBlock block = world.getBlock(x, y, z); // Get actual block data
 
-            //const Material &temp_material = Material::toMaterial((BlockId)block.id);
-
             const auto &material = Material::toMaterial((BlockId)block.id); // Copy block material
 
             // Catch that an air block is being added BEFORE placing in inventory
             if(material.id != Material::ID::Nothing)
             {
                 m_pPlayer->addItem(material);
-
-                // Comment this out unless object pickup isn't working at all.
-                /*
-                if(debug)
-                {
-                    std::cout << db_string << "Player should now have: ";
-                    std::cout << material.getItemName() << "\n";
-                }
-                */
             }
-
-            // None of this would do anything, it's handled by the world.
-            /*
-                        auto r = 1;
-                        for (int y = -r; y < r; y++)
-                        for (int x = -r; x < r;x++)
-                        for (int z = -r; z < r; z++)
-                        {
-                            int newX = m_digSpot.x + x;
-                            int newY = m_digSpot.y + y;
-                            int newZ = m_digSpot.z + z;
-                            world.updateChunk   (newX, newY, newZ);
-                            world.setBlock      (newX, newY, newZ, 0);
-            */
 
             world.updateChunk(x, y, z);
             world.setBlock(x, y, z, 0);
