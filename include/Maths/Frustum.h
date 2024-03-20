@@ -15,6 +15,7 @@ struct Plane {
     glm::vec3 normal; // Vector3 normals
 };
 
+/// @brief Basically a complex viewport, validates player view and collision.
 class ViewFrustum {
   public:
     void update(const glm::mat4 &projViewMatrix) noexcept;
