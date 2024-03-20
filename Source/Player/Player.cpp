@@ -11,8 +11,6 @@
 #include "World/World.h"
 
 sf::Font f;
-sf::Clock jump_timer;
-sf::Time milli = sf::milliseconds(150);
 
 Player::Player()
     : Entity({2500, 125, 2500}, {0.f, 0.f, 0.f}, {0.3f, 1.f, 0.3f})
