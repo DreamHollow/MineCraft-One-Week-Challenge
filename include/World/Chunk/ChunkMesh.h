@@ -35,6 +35,7 @@ struct ChunkMeshCollection {
     ChunkMesh solidMesh;
     ChunkMesh waterMesh;
     ChunkMesh floraMesh;
+    ChunkMesh ghostMesh;
 };
 
 #endif // CHUNKMESH_H_INCLUDED
