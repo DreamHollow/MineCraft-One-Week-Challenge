@@ -22,7 +22,7 @@ World::World(const Camera &camera, const Config &config, Player &player)
     //std::ofstream output_file("world_save.txt");
 
     for (int i = 0; i < 1; i++) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(500)); // 200 normally
+        std::this_thread::sleep_for(std::chrono::milliseconds(175)); // 200 normally
         m_chunkLoadThreads.emplace_back([&]() { loadChunks(camera); });
     }
 }
@@ -44,6 +44,18 @@ ChunkBlock World::getBlock(int x, int y, int z)
     return m_chunkManager.getChunk(chunkPosition.x, chunkPosition.z)
         .getBlock(bp.x, y, bp.z);
 }
+
+// Gets the "status" of affected block for status change
+/*
+ChunkBlock World::getBlockStatus(int x, int y, int z)
+{
+    auto bp = getBlockXZ(x, z);
+    auto chunkPosition = getChunkXZ(x, z);
+
+    return m_chunkManager.getChunk(chunkPosition.x, chunkPosition.z)
+        .getBlock(bp.x, y, bp.z);
+}
+*/
 
 void World::setBlock(int x, int y, int z, ChunkBlock block)
 {
@@ -87,7 +99,8 @@ void World::loadChunks(const Camera &camera)
         int cameraZ = camera.position.z / CHUNK_SIZE;
 
         for (int i = 0; i < m_loadDistance; i++) {
-            std::this_thread::sleep_for(std::chrono::milliseconds(1));
+            // Force the thread to hesitate for safety reasons
+            std::this_thread::sleep_for(std::chrono::milliseconds(1)); // Normally 1
             int minX = std::max(cameraX - i, 0);
             int minZ = std::max(cameraZ - i, 0);
             int maxX = cameraX + i;
