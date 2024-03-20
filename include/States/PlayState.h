@@ -31,4 +31,4 @@ class StatePlay : public StateBase {
     //FPSCounter m_fpsCounter;
 };
 
-#endif // PlayState_H_INCLUDED
+#endif
