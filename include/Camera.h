@@ -31,4 +31,4 @@ class Camera : public Entity {
     Config m_config;
 };
 
-#endif // CAMERA_H_INCLUDED
+#endif
