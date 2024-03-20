@@ -6,6 +6,7 @@
 struct BlockDataHolder;
 class BlockType;
 
+/// @brief Essentially a handler class for individual blocks in a chunk.
 struct ChunkBlock {
     ChunkBlock() = default;
 
