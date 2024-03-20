@@ -19,12 +19,13 @@ struct Material : public NonCopyable {
         Cactus,
         Rose,
         TallGrass,
-        DeadShrub
+        DeadShrub,
+        Badlands // new
     };
 
     const static Material NOTHING, GRASS_BLOCK, DIRT_BLOCK, STONE_BLOCK,
         OAK_BARK_BLOCK, OAK_LEAF_BLOCK, SAND_BLOCK, CACTUS_BLOCK, ROSE,
-        TALL_GRASS, DEAD_SHRUB;
+        TALL_GRASS, DEAD_SHRUB, SCORCHED_EARTH;
 
     Material(Material::ID id, int maxStack, bool isBlock, std::string &&name);
 
@@ -43,13 +44,13 @@ struct Material : public NonCopyable {
 namespace std {
 template <> struct hash<Material::ID>
 {
-    size_t operator()(const Material::ID &id) const
-    {
-        std::hash<Material::ID> hasher;
+        size_t operator()(const Material::ID &id) const
+        {
+            std::hash<Material::ID> hasher;
 
-        return hasher(id);
-    }
-};
-} // namespace std
+            return hasher(id);
+        }
+    };
+}
 
-#endif // MATERIAL_H_INCLUDED
+#endif
