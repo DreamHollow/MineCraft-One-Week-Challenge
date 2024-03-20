@@ -8,7 +8,8 @@
 #include "FloraRenderer.h"
 #include "SkyboxRenderer.h"
 #include "WaterRenderer.h"
-#include "Audio/AudioRenderer.h"
+#include "GhostRenderer.h"
+#include "Audio/MusicPlayer.h"
 
 class Camera;
 class ChunkSection;
@@ -26,9 +27,13 @@ class RenderMaster {
     ChunkRenderer m_chunkRenderer;
     WaterRenderer m_waterRenderer;
     FloraRenderer m_floraRenderer;
+    GhostRenderer m_ghostRenderer;
 
     // Detail
     SkyboxRenderer m_skyboxRenderer;
+
+    // Audio
+    //MusicPlayer m_musicPlayer; // This works but is off by default
 
     bool m_drawBox = false;
 };
