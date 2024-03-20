@@ -21,6 +21,8 @@ void Camera::update() noexcept
     m_frustum.update(m_projViewMatrx);
 }
 
+/// @brief Supposed to latch a camera to a playable entity, specifically.
+/// @param entity 
 void Camera::hookEntity(const Entity &entity) noexcept
 {
     m_pEntity = &entity;
