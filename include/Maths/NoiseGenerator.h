@@ -32,4 +32,4 @@ class NoiseGenerator {
     int m_seed;
 };
 
-#endif // NOISEGENERATOR_H_INCLUDED
+#endif
