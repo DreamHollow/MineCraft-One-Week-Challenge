@@ -3,7 +3,7 @@
 
 #include "glm.h"
 
-/// @brief Raycasting class associated with player's line of sight.
+/// @brief Ray, as in raycasting from an origin point to a distant point.
 class Ray {
   public:
     Ray(const glm::vec3 &position, const glm::vec3 &direction);
@@ -20,4 +20,4 @@ class Ray {
     glm::vec3 m_direction;
 };
 
-#endif // RAY_H_INCLUDED
+#endif
