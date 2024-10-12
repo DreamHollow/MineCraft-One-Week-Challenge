@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Linux only
+
 BUILD_DIR='build'
 BINARY='mc-one-week'
 
