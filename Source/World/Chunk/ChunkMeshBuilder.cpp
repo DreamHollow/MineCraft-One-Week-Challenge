@@ -81,7 +81,7 @@ void ChunkMeshBuilder::buildMesh()
     AdjacentBlockPositions directions;
     m_pBlockPtr = m_pChunk->begin();
     faces = 0;
-    sf::Clock timer;
+    //sf::Clock timer; // this doesn't seem to be used
     for (int16_t i = 0; i < CHUNK_VOLUME; i++) {
         uint8_t x = i % CHUNK_SIZE;
         uint8_t y = i / (CHUNK_SIZE * CHUNK_SIZE);
@@ -97,6 +97,7 @@ void ChunkMeshBuilder::buildMesh()
         sf::Vector3i position(x, y, z);
         setActiveMesh(block);
 
+        // "Air" and "Nothing" are fundamentally identical
         if (block == BlockId::Air) {
             continue;
         }
