@@ -25,7 +25,7 @@ void ChunkRenderer::render(const Camera &camera)
     m_shader.useProgram();
     BlockDatabase::get().textureAtlas.bindTexture();
 
-    m_shader.loadProjectionViewMatrix(camera.getProjectionViewMatrix());
+    m_shader.loadProjectionViewMatrix(camera.m_projViewMatrix);
 
     for (auto mesh : m_chunks) {
         GL::bindVAO(mesh->vao);
