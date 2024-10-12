@@ -124,7 +124,7 @@ void Player::update(float dt, World &world)
 
     if (!m_isFlying) {
         if (!m_isOnGround) {
-            velocity.y -= 40 * dt;
+            velocity.y -= 34 * dt; // originally 40
         }
         m_isOnGround = false;
     }
