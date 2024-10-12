@@ -17,8 +17,8 @@ void Camera::update() noexcept
     rotation = m_pEntity->rotation;
 
     m_viewMatrix = makeViewMatrix(*this);
-    m_projViewMatrx = m_projectionMatrix * m_viewMatrix;
-    m_frustum.update(m_projViewMatrx);
+    m_projViewMatrix = m_projectionMatrix * m_viewMatrix;
+    m_frustum.update(m_projViewMatrix);
 }
 
 /// @brief Supposed to latch a camera to a playable entity, specifically.
@@ -28,6 +28,11 @@ void Camera::hookEntity(const Entity &entity) noexcept
     m_pEntity = &entity;
 }
 
+// These are obsolete
+// Make the camera objects public and use them directly,
+// so you don't have to write extra code referencing them as const values
+
+/*
 const glm::mat4 &Camera::getViewMatrix() const noexcept
 {
     return m_viewMatrix;
@@ -42,6 +47,7 @@ const glm::mat4 &Camera::getProjectionViewMatrix() const noexcept
 {
     return m_projViewMatrx;
 }
+*/
 
 const ViewFrustum &Camera::getFrustum() const noexcept
 {
