@@ -25,7 +25,7 @@ struct Material : public NonCopyable {
 
     const static Material NOTHING, GRASS_BLOCK, DIRT_BLOCK, STONE_BLOCK,
         OAK_BARK_BLOCK, OAK_LEAF_BLOCK, SAND_BLOCK, CACTUS_BLOCK, ROSE,
-        TALL_GRASS, DEAD_SHRUB, SCORCHED_EARTH;
+        TALL_GRASS, DEAD_SHRUB, BAD_DIRT;
 
     Material(Material::ID id, int maxStack, bool isBlock, std::string &&name);
 
