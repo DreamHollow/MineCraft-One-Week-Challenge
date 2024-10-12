@@ -125,8 +125,8 @@ void SkyboxRenderer::render(const Camera &camera)
     m_skyCube.bindVAO();
     m_cubeTexture.bindTexture();
 
-    m_shader.loadViewMatrix(camera.getViewMatrix());
-    m_shader.loadProjectionMatrix(camera.getProjMatrix());
+    m_shader.loadViewMatrix(camera.m_viewMatrix);
+    m_shader.loadProjectionMatrix(camera.m_projectionMatrix);
 
     GL::drawElements(m_skyCube.getIndicesCount());
 }
